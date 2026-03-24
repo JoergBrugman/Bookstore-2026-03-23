@@ -1,3 +1,5 @@
+namespace GetUseAcademy.Bookstore.Books.Book;
+
 page 50101 "BSB Book List"
 {
     Caption = 'Books';

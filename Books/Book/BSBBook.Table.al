@@ -1,3 +1,5 @@
+namespace GetUseAcademy.Bookstore.Books.Book;
+
 /// <summary>
 /// Table BSB Book (ID 50100).
 /// </summary>

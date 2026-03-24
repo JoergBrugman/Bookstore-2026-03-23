@@ -1,3 +1,8 @@
+namespace GetUseAcademy.Bookstore.Customer;
+
+using Microsoft.Sales.Customer;
+using GetUseAcademy.Bookstore.Books.Book;
+
 tableextension 50100 "BSB Customer" extends Customer
 {
     fields

@@ -1,3 +1,5 @@
+namespace GetUseAcademy.Bookstore.Books.Book;
+
 page 50100 "BSB Book Card"
 {
     Caption = 'Book Card';

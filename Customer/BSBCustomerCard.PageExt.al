@@ -1,3 +1,7 @@
+namespace GetUseAcademy.Bookstore.Customer;
+
+using Microsoft.Sales.Customer;
+
 pageextension 50100 "BSB Customer Card" extends "Customer Card"
 {
     layout
