@@ -1,0 +1,16 @@
+{
+    "CRS.FileNamePattern": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+    "CRS.FileNamePatternExtensions": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+    "CRS.FileNamePatternPageCustomizations": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+    "CRS.OnSaveAlFileAction": "Rename",
+    "CRS.ObjectNamePrefix": "BSB ",
+    "al.enableCodeAnalysis": false,
+    "al.codeAnalyzers": [
+        "${CodeCop}",
+        "${UICop}",
+        "${PerTenantExtensionCop}"
+    ],
+    "editor.mouseWheelZoom": true,
+    "objectIdNinja.requestPerRange": true,
+    "editor.snippetSuggestions": "bottom"
+}

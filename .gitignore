@@ -1,0 +1,4 @@
+*.app
+.altestrunner
+rad.json
+.alcache
