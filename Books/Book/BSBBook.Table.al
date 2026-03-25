@@ -20,7 +20,11 @@ table 50100 "BSB Book"
         field(2; Description; Text[100])
         {
             Caption = 'Description';
-            //TODO Standard-Impl. noch machen
+            trigger OnValidate()
+            begin
+                if ("Search Description" = UpperCase(xRec.Description)) or ("Search Description" = '') then
+                    "Search Description" := CopyStr(Description, 1, MaxStrLen("Search Description"));
+            end;
         }
         field(3; "Search Description"; Code[100])
         {
@@ -40,13 +44,11 @@ table 50100 "BSB Book"
         {
             Caption = 'Created';
             Editable = false;
-            //TODO Created automatisch bestücken
         }
         field(8; "Last Date Modified"; Date)
         {
             Caption = 'Last Date Modified';
             Editable = false;
-            //TODO Last Date Modified automatisch bestücken
         }
         field(10; Author; Text[50])
         {
@@ -92,7 +94,33 @@ table 50100 "BSB Book"
         fieldgroup(DropDown; "No.", Description, ISBN) { }
         fieldgroup(Brick; "No.", Description, ISBN, Author) { }
     }
-}
 
-//TODO Bücher dürfen nicht gelöscht werden
-//TODO Funktion TestBlocked() impl.
+    var
+        OnDeleteBookErr: Label 'A %1 cannot be deleted', Comment = 'de-DE=Ein %1 kann nicht gelöscht werden';
+
+    trigger OnInsert()
+    begin
+        Created := Today();
+    end;
+
+    trigger OnModify()
+    begin
+        "Last Date Modified" := Today();
+    end;
+
+    trigger OnRename()
+    begin
+        "Last Date Modified" := Today();
+    end;
+
+    trigger OnDelete()
+    begin
+        Error(OnDeleteBookErr, TableCaption());
+
+    end;
+
+    procedure TestBlocked()
+    begin
+        TestField(Blocked, false);
+    end;
+}
