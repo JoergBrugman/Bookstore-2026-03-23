@@ -16,10 +16,12 @@ table 50100 "BSB Book"
         {
             Caption = 'No.';
             NotBlank = true;
+            ToolTip = 'Specifies the value of the No. field.', Comment = '%';
         }
         field(2; Description; Text[100])
         {
             Caption = 'Description';
+            ToolTip = 'Specifies the value of the Description field.', Comment = '%';
             trigger OnValidate()
             begin
                 if ("Search Description" = UpperCase(xRec.Description)) or ("Search Description" = '') then
@@ -29,30 +31,36 @@ table 50100 "BSB Book"
         field(3; "Search Description"; Code[100])
         {
             Caption = 'Search Description';
+            ToolTip = 'Specifies the value of the Search Description field.', Comment = '%';
         }
         field(4; Blocked; Boolean)
         {
             Caption = 'Blocked';
+            ToolTip = 'Specifies the value of the Blocked field.', Comment = '%';
         }
         field(5; Type; Option)
         {
             Caption = 'Type';
             OptionMembers = " ",Hardcover,Paperback;
             OptionCaption = ' ,Hardcover,Paperback';
+            ToolTip = 'Specifies the value of the Type field.', Comment = '%';
         }
         field(7; Created; Date)
         {
             Caption = 'Created';
             Editable = false;
+            ToolTip = 'Specifies the value of the Created field.', Comment = '%';
         }
         field(8; "Last Date Modified"; Date)
         {
             Caption = 'Last Date Modified';
             Editable = false;
+            ToolTip = 'Specifies the value of the Last Date Modified field.', Comment = '%';
         }
         field(10; Author; Text[50])
         {
             Caption = 'Author';
+            ToolTip = 'Specifies the value of the Author field.', Comment = '%';
         }
         field(11; "Author Provision %"; Decimal)
         {
@@ -60,24 +68,29 @@ table 50100 "BSB Book"
             DecimalPlaces = 0 : 2;
             MinValue = 0;
             MaxValue = 100;
+            ToolTip = 'Specifies the value of the Author Provision % field.', Comment = '%';
         }
         field(15; ISBN; Code[20])
         {
             Caption = 'ISBN';
+            ToolTip = 'Specifies the value of the ISBN field.', Comment = '%';
         }
         field(16; "No. of Pages"; Integer)
         {
             Caption = 'No. of Pages';
             MinValue = 0;
+            ToolTip = 'Specifies the value of the No. of Pages field.', Comment = '%';
         }
         field(17; "Edition No."; Integer)
         {
             Caption = 'Edition No.';
             MinValue = 0;
+            ToolTip = 'Specifies the value of the Edition No. field.', Comment = '%';
         }
         field(18; "Date of Publishing"; Date)
         {
             Caption = 'Date of Publishing';
+            ToolTip = 'Specifies the value of the Date of Publishing field.', Comment = '%';
         }
     }
 
@@ -122,5 +135,31 @@ table 50100 "BSB Book"
     procedure TestBlocked()
     begin
         TestField(Blocked, false);
+    end;
+
+    /// <summary>
+    /// Shows the Book Card base on the Rec.
+    /// </summary>
+    procedure ShowCard()
+    begin
+        ShowCard(Rec);
+    end;
+
+    /// <summary>
+    /// Shows the Book Card that belongs to the given Parameter.
+    /// </summary>
+    /// <param name="BookNo">Code[20].</param>
+    procedure ShowCard(BookNo: Code[20])
+    var
+        BSBBook: Record "BSB Book";
+    begin
+        if not BSBBook.Get(BookNo) then
+            exit;
+        ShowCard(BSBBook);
+    end;
+
+    local procedure ShowCard(BSBBook: Record "BSB Book")
+    begin
+        Page.RunModal(Page::"BSB Book Card", BSBBook);
     end;
 }

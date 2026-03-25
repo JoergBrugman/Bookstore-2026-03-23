@@ -1,5 +1,7 @@
 namespace GetUseAcademy.Bookstore.Books.Book;
 
+using GetUseAcademy.Bookstore.Books.Tools;
+
 page 50101 "BSB Book List"
 {
     Caption = 'Books';
@@ -16,38 +18,30 @@ page 50101 "BSB Book List"
         {
             repeater(Books)
             {
-                field("No."; Rec."No.")
-                {
-                    ToolTip = 'Specifies the value of the No. field.', Comment = '%';
-                }
-                field(Description; Rec.Description)
-                {
-                    ToolTip = 'Specifies the value of the Description field.', Comment = '%';
-                }
-                field(ISBN; Rec.ISBN)
-                {
-                    ToolTip = 'Specifies the value of the ISBN field.', Comment = '%';
-                }
-                field(Author; Rec.Author)
-                {
-                    ToolTip = 'Specifies the value of the Author field.', Comment = '%';
-                }
-                field("No. of Pages"; Rec."No. of Pages")
-                {
-                    Visible = false;
-                    ToolTip = 'Specifies the value of the No. of Pages field.', Comment = '%';
-                }
+                field("No."; Rec."No.") { }
+                field(Description; Rec.Description) { }
+                field(ISBN; Rec.ISBN) { }
+                field(Author; Rec.Author) { }
+                field("No. of Pages"; Rec."No. of Pages") { Visible = false; }
             }
         }
         area(FactBoxes)
         {
-            systempart(Links; Links)
+            systempart(Links; Links) { ApplicationArea = RecordLinks; }
+            systempart(Notes; Notes) { ApplicationArea = Notes; }
+        }
+    }
+    actions
+    {
+        area(Processing)
+        {
+            action(CreateBooks)
             {
-                ApplicationArea = RecordLinks;
-            }
-            systempart(Notes; Notes)
-            {
-                ApplicationArea = Notes;
+                Caption = 'Create Books';
+                Image = CreateDocuments;
+                ApplicationArea = All;
+                ToolTip = 'Executes the Create Books action.';
+                RunObject = codeunit "BSB Create Books";
             }
         }
     }

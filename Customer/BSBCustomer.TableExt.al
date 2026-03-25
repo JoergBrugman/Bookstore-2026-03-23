@@ -11,7 +11,7 @@ tableextension 50100 "BSB Customer" extends Customer
         {
             Caption = 'Favorite Book No.';
             TableRelation = "BSB Book";
-
+            ToolTip = 'Specifies the value of the Favorite Book No. field.', Comment = '%';
             trigger OnValidate()
             var
                 BSBBook: Record "BSB Book";
@@ -30,6 +30,7 @@ tableextension 50100 "BSB Customer" extends Customer
             Editable = false;
             FieldClass = FlowField;
             CalcFormula = lookup("BSB Book".Description where("No." = field("BSB Favorite Book No.")));
+            ToolTip = 'Specifies the value of the Favorite Book Description field.', Comment = '%';
         }
     }
 }

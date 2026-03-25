@@ -14,84 +14,33 @@ page 50100 "BSB Book Card"
             group(General)
             {
                 Caption = 'General';
-                field("No."; Rec."No.")
-                {
-                    ToolTip = 'Specifies the value of the No. field.', Comment = '%';
-                    Importance = Promoted;
-                }
-                field(Description; Rec.Description)
-                {
-                    ToolTip = 'Specifies the value of the Description field.', Comment = '%';
-                }
-                field("Search Description"; Rec."Search Description")
-                {
-                    ToolTip = 'Specifies the value of the Search Description field.', Comment = '%';
-                    Importance = Additional;
-                }
-                field(Blocked; Rec.Blocked)
-                {
-                    ToolTip = 'Specifies the value of the Blocked field.', Comment = '%';
-                }
-                field(Author; Rec.Author)
-                {
-                    ToolTip = 'Specifies the value of the Author field.', Comment = '%';
-                    Importance = Promoted;
-                }
-                field(Type; Rec."Type")
-                {
-                    ToolTip = 'Specifies the value of the Type field.', Comment = '%';
-                }
-                field(ISBN; Rec.ISBN)
-                {
-                    ToolTip = 'Specifies the value of the ISBN field.', Comment = '%';
-                    Importance = Additional;
-                }
-                field(Created; Rec.Created)
-                {
-                    ToolTip = 'Specifies the value of the Created field.', Comment = '%';
-                    Importance = Additional;
-                }
-                field("Last Date Modified"; Rec."Last Date Modified")
-                {
-                    ToolTip = 'Specifies the value of the Last Date Modified field.', Comment = '%';
-                    Importance = Additional;
-                }
+                field("No."; Rec."No.") { importance = Promoted; }
+                field(Description; Rec.Description) { }
+                field("Search Description"; Rec."Search Description") { Importance = Additional; }
+                field(Blocked; Rec.Blocked) { }
+                field(Author; Rec.Author) { Importance = Promoted; }
+                field(Type; Rec."Type") { }
+                field(ISBN; Rec.ISBN) { Importance = Additional; }
+                field(Created; Rec.Created) { Importance = Additional; }
+                field("Last Date Modified"; Rec."Last Date Modified") { Importance = Additional; }
             }
             group(Invoicing)
             {
                 Caption = 'Invoicing';
-                field("Author Provision %"; Rec."Author Provision %")
-                {
-                    ToolTip = 'Specifies the value of the Author Provision % field.', Comment = '%';
-                }
+                field("Author Provision %"; Rec."Author Provision %") { }
             }
             group(Publishing)
             {
                 Caption = 'Publishing';
-                field("Edition No."; Rec."Edition No.")
-                {
-                    ToolTip = 'Specifies the value of the Edition No. field.', Comment = '%';
-                }
-                field("No. of Pages"; Rec."No. of Pages")
-                {
-                    ToolTip = 'Specifies the value of the No. of Pages field.', Comment = '%';
-                }
-                field("Date of Publishing"; Rec."Date of Publishing")
-                {
-                    ToolTip = 'Specifies the value of the Date of Publishing field.', Comment = '%';
-                }
+                field("Edition No."; Rec."Edition No.") { }
+                field("No. of Pages"; Rec."No. of Pages") { }
+                field("Date of Publishing"; Rec."Date of Publishing") { }
             }
         }
         area(FactBoxes)
         {
-            systempart(Links; Links)
-            {
-                ApplicationArea = RecordLinks;
-            }
-            systempart(Notes; Notes)
-            {
-                ApplicationArea = Notes;
-            }
+            systempart(Links; Links) { ApplicationArea = RecordLinks; }
+            systempart(Notes; Notes) { ApplicationArea = Notes; }
         }
     }
 }

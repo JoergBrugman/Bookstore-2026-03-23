@@ -1,6 +1,7 @@
 namespace GetUseAcademy.Bookstore.Customer;
 
 using Microsoft.Sales.Customer;
+using GetUseAcademy.Bookstore.Books.Book;
 
 pageextension 50100 "BSB Customer Card" extends "Customer Card"
 {
@@ -16,13 +17,16 @@ pageextension 50100 "BSB Customer Card" extends "Customer Card"
                 {
                     ApplicationArea = All;
                     Importance = Promoted;
-                    ToolTip = 'Specifies the value of the Favorite Book No. field.', Comment = '%';
                 }
-                field("BSB Favorite Book Description"; Rec."BSB Favorite Book Description")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the Favorite Book Description field.', Comment = '%';
-                }
+                field("BSB Favorite Book Description"; Rec."BSB Favorite Book Description") { ApplicationArea = All; }
+            }
+        }
+        addafter(Control149)
+        {
+            part(BSBBookFactBox; "BSB Book FactBox")
+            {
+                ApplicationArea = All;
+                SubPageLink = "No." = field("BSB Favorite Book No.");
             }
         }
     }
