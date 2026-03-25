@@ -17,6 +17,18 @@
             "enableSqlInformationDebugger": true,
             "tenant": "default",
             "usePublicURLFromServer": true
+        },
+        {
+            "name": "AL: Generated Attach request",
+            "request": "attach",
+            "type": "al",
+            "server": "http://BC",
+            "serverInstance": "BC",
+            "authentication": "Windows",
+            "port": 7049,
+            "sessionId": 372,
+            "breakOnNext": "WebClient",
+            "breakOnError": "ExcludeTry"
         }
     ]
 }
