@@ -127,9 +127,14 @@ table 50100 "BSB Book"
     end;
 
     trigger OnDelete()
+    var
+        IsHandled: Boolean;
     begin
+        OnBeforeOnDelete(Rec, xRec, IsHandled);
+        if IsHandled then
+            exit;
         Error(OnDeleteBookErr, TableCaption());
-
+        OnAfterOnDelete(Rec);
     end;
 
     procedure TestBlocked()
@@ -161,5 +166,15 @@ table 50100 "BSB Book"
     local procedure ShowCard(BSBBook: Record "BSB Book")
     begin
         Page.RunModal(Page::"BSB Book Card", BSBBook);
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeOnDelete(var Rec: Record "BSB Book"; var xRec: Record "BSB Book"; var IsHandled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterOnDelete(var Rec: Record "BSB Book")
+    begin
     end;
 }
