@@ -3,6 +3,11 @@
   <file datatype="xml" source-language="en-US" target-language="en-US" original="Bookstore">
     <body>
       <group id="body">
+        <trans-unit id="Page 1869352431 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Map</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BSB BingMapsCardPart - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3249233238 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Book</source>
           <note from="Developer" annotates="general" priority="2"></note>

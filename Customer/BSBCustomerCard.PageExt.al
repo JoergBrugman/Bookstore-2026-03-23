@@ -2,6 +2,7 @@ namespace GetUseAcademy.Bookstore.Customer;
 
 using Microsoft.Sales.Customer;
 using GetUseAcademy.Bookstore.Books.Book;
+using GetUseAcademy.Bookstore.BingMapsControl;
 
 pageextension 50100 "BSB Customer Card" extends "Customer Card"
 {
@@ -27,6 +28,11 @@ pageextension 50100 "BSB Customer Card" extends "Customer Card"
             {
                 ApplicationArea = All;
                 SubPageLink = "No." = field("BSB Favorite Book No.");
+            }
+            part(BingMapsCardPart; "BSB BingMapsCardPart")
+            {
+                ApplicationArea = All;
+                SubPageLink = "No." = field("No.");
             }
         }
     }
