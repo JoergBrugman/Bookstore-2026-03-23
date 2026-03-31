@@ -318,6 +318,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension BSB Customer - Field BSB Favorite Book No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Codeunit 607005014 - NamedType 1284017336" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Balance of customer is lager than the credit limit.</source>
+          <note from="Developer" annotates="general" priority="2">de-DE=Der aldo des Debitors ist größer als das Kreditlimit.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BSB Notif. Subscriber Store - NamedType CredLimitNofifDescTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 607005014 - NamedType 2733811067" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Edit Customer</source>
+          <note from="Developer" annotates="general" priority="2">de-DE=Debitor bearbeiten</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BSB Notif. Subscriber Store - NamedType CredLimitNotifActionTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 607005014 - NamedType 2656007186" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 %2 %3 %4 %5 is lager than %6</source>
+          <note from="Developer" annotates="general" priority="2">de-DE=%1 %2 %3 %4 %5 ist größer als %6</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BSB Notif. Subscriber Store - NamedType CredLimitNotifMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 607005014 - NamedType 1846691345" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer balance exceeds credit limt</source>
+          <note from="Developer" annotates="general" priority="2">de-DE=Debitor Kreditlimitüberschreitung</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BSB Notif. Subscriber Store - NamedType CredLimitNotifTxt</note>
+        </trans-unit>
         <trans-unit id="Codeunit 4266663845 - Method 4183682721 - NamedType 4073702997" size-unit="char" translate="yes" xml:space="preserve">
           <source>Company Information Setup</source>
           <note from="Developer" annotates="general" priority="2">de-DE=Firmendaten</note>
