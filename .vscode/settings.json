@@ -12,5 +12,7 @@
     ],
     "editor.mouseWheelZoom": true,
     "objectIdNinja.requestPerRange": true,
-    "editor.snippetSuggestions": "bottom"
+    "editor.snippetSuggestions": "bottom",
+    "xliffSync.parseFromDeveloperNote": true,
+    "xliffSync.parseFromDeveloperNoteOverwrite": true
 }

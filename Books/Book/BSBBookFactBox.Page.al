@@ -21,7 +21,7 @@ page 50102 "BSB Book FactBox"
                     ShowDatail();
                 end;
             }
-            field(Description; Rec.Description) { Caption = 'Bok Description', Comment = 'de-DE=Buchbeschreibung'; }
+            field(Description; Rec.Description) { Caption = 'Book Description', Comment = 'de-DE=Buchbeschreibung'; }
             field("Date of Publishing"; Rec."Date of Publishing") { }
             field("No. of Pages"; Rec."No. of Pages") { }
             field(Author; Rec.Author) { }

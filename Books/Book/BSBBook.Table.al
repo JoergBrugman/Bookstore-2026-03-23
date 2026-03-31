@@ -14,13 +14,13 @@ table 50100 "BSB Book"
     {
         field(1; "No."; Code[20])
         {
-            Caption = 'No.';
+            Caption = 'No.', Comment = 'de-DE=Nr.';
             NotBlank = true;
             ToolTip = 'Specifies the value of the No. field.', Comment = '%';
         }
         field(2; Description; Text[100])
         {
-            Caption = 'Description';
+            Caption = 'Description', Comment = 'de-DE=Beschreibung';
             ToolTip = 'Specifies the value of the Description field.', Comment = '%';
             trigger OnValidate()
             begin
@@ -110,6 +110,7 @@ table 50100 "BSB Book"
 
     var
         OnDeleteBookErr: Label 'A %1 cannot be deleted', Comment = 'de-DE=Ein %1 kann nicht gelöscht werden';
+        XXXXTXT: Label 'This is a test';
 
     trigger OnInsert()
     begin
