@@ -2,7 +2,7 @@ namespace GetUseAcademy.Bookstore.Books.Tools;
 
 using GetUseAcademy.Bookstore.Books.Book;
 
-codeunit 50149 "BSB Create Books"
+codeunit 50106 "BSB Create Books"
 {
     trigger OnRun()
     var
